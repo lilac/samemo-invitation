@@ -68,6 +68,7 @@ gulp.task('sass', function() {
 gulp.task('static', function() {
   gulp.src([
     'app/index.html',
+    'app/404.html',
     'app/robots.txt'
   ])
     .pipe(gulp.dest('./dist'));
