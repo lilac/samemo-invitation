@@ -138,8 +138,8 @@ var isMobile = isiOS || isAndroid;
 var match = document.location.pathname.match(/\/join\/(.+)/);
 if (match) var token = match[1];
 
-var joinLink = 'https://app.actor.im/#/join/' + token;
-var customProtocolLink = 'actor://invite?token=' + token;
+var joinLink = 'http://www.samemoment.com/#/join/' + token;
+var customProtocolLink = 'samemo://invite?token=' + token;
 
 module.exports = {
   isiOS: isiOS,
