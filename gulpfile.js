@@ -59,7 +59,7 @@ gulp.task('sass', function() {
     .pipe(sourcemaps.init())
     .pipe(sass())
     .pipe(autoprefixer())
-    .pipe(minifycss())
+    .pipe(minifycss({processImport: false}))
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./dist/styles'))
     .pipe(browserSync.stream());
@@ -89,7 +89,7 @@ gulp.task('serve', function() {
         ])
       ]
     },
-    https: true,
+    https: false,
     // Here you can disable/enable each feature individually
     ghostMode: {
       clicks: true,
