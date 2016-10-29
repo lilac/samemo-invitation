@@ -56,7 +56,7 @@ var App = React.createClass({displayName: "App",
 
   onClick: function() {
     var joinLink = CustomProtoHelper.joinLink;
-    var timeout = 100;
+    var timeout = 5000;
     var clicked = +new Date();
 
     if (CustomProtoHelper.isMobile) {
@@ -64,12 +64,14 @@ var App = React.createClass({displayName: "App",
     }
     window.setTimeout(function () {
       if (+new Date() - clicked < timeout * 2) {
-        window.location.replace(joinLink);
+        window.location.assign(joinLink);
       }
     }, timeout);
 
     if (CustomProtoHelper.isMobile) {
-      window.location.replace(CustomProtoHelper.customProtocolLink);
+      window.location.assign(CustomProtoHelper.customProtocolLink);
+    } else {
+      window.location.assign(joinLink);
     }
   },
 
